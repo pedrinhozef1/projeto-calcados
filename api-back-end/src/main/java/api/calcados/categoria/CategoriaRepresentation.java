@@ -42,12 +42,12 @@ public interface CategoriaRepresentation {
     @Setter
     @Builder
     class ListaCategoria {
-        private int id;
+        private int idCategoria;
         private String descricao;
 
         public static ListaCategoria from(Categoria categoria){
             return ListaCategoria.builder()
-                    .id(categoria.getIdCategoria())
+                    .idCategoria(categoria.getIdCategoria())
                     .descricao(categoria.getDescricao())
                     .build();
         }
