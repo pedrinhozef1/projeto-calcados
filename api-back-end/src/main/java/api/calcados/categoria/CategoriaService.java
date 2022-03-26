@@ -26,8 +26,10 @@ public class CategoriaService {
 
     public void apagarCategoria(int id){
         Categoria categoria = this.buscarCategoria(id);
-
-        this.categoriaRepository.delete(categoria);
+        //
+        categoria.setStatus(Categoria.Status.INATIVO);
+        //
+        categoriaRepository.save(categoria);
     }
 
     public Categoria atualizarCategoria(
