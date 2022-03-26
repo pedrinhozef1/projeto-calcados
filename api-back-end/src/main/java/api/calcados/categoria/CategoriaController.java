@@ -18,6 +18,7 @@ import java.util.Objects;
 @RestController
 @RequestMapping("categoria")
 @AllArgsConstructor
+@CrossOrigin
 public class CategoriaController {
     private CategoriaService categoriaService;
     private CategoriaRepository categoriaRepository;
@@ -38,7 +39,7 @@ public class CategoriaController {
                 .from(this.categoriaService.buscarCategoria(id)));
     }
 
-    @GetMapping("/")
+    @GetMapping("/lista")
     public ResponseEntity<Paginacao> todasCategorias(
             @QuerydslPredicate(root = Categoria.class) Predicate filtroURI,
             @RequestParam(name = "tamanhoPagina", defaultValue = "10") int tamanhoPagina,
